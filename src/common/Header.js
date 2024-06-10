@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import TopBar from "./TopBar";
 import { nav } from "../data/Data";
+import Category from "./Category";
 
 export default function Header() {
   const [isSticky, setIsSticky] = useState(false);
@@ -30,7 +31,7 @@ export default function Header() {
         }`}
       >
         <div className="row px-xl-5">
-          Category
+          <Category/>
           <div className="col-lg-9">
             <nav className="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-0">
               <a href="" className="text-decoration-none d-none d-lg-block">
