@@ -3,12 +3,17 @@ import { Link } from "react-router-dom";
 import TopBar from "./TopBar";
 import { nav } from "../data/Data";
 import Category from "./Category";
+import { useDispatch, useSelector } from "react-redux";
+import { getCartTotal } from "../redux/CartSlice";
 
 export default function Header() {
+  const dispatch = useDispatch();
+  const {totalItems} = useSelector((state) => state.cart);
   const [isSticky, setIsSticky] = useState(false);
   const [toggler, setToggler] = useState(false);
 
   useEffect(() => {
+    dispatch(getCartTotal);
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -76,7 +81,7 @@ export default function Header() {
                       className="badge text-secondary border border-secondary rounded-circle"
                       style={{ paddingBottom: "2px" }}
                     >
-                      0
+                      {totalItems}
                     </span>
                   </Link>
                 </div>
