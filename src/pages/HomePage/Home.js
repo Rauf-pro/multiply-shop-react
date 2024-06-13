@@ -3,6 +3,7 @@ import Banner from '../../components/Banner';
 import Features from '../../components/Features';
 import Categories from '../../components/Categories';
 import Product from '../../components/Product';
+import Offers from '../../components/Offers';
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <Features/>
       <Categories/>
       <Product/>
+      <Offers/>
 
     </>
   )
